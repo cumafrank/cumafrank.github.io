@@ -1306,7 +1306,7 @@ display(obs_df.head(), com_df.head())
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe" style='width:100%;  overflow: auto;'>
   <thead>
     <tr style="text-align: right;">
       <th></th>
