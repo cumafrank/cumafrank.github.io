@@ -1305,6 +1305,12 @@ display(obs_df.head(), com_df.head())
     .dataframe thead th {
         text-align: right;
     }
+
+    .divScroll
+    {
+    height: 100%;
+    Overflow: scroll;
+    }
 </style>
 <table border="1" class="dataframe" style='width:100%;  overflow: auto;'>
   <thead>
