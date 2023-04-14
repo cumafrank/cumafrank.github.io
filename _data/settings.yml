@@ -9,7 +9,7 @@ google-ID: 'UA-112060364-2'
 menu:
 #- {name: 'Interesting Facts',  url: 'facts'}
 #- {name: 'Learning Resources', url: 'resources'}
-- {name: 'Posts',              url: 'sample-posts'}
+- {name: 'Posts',              url: 'posts'}
 - {name: 'Documentation',      url: 'documentation'}
 - {name: 'About Me',              url: 'about'}
 
