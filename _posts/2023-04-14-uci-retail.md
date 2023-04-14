@@ -1309,7 +1309,7 @@ display(obs_df.head(), com_df.head())
     .divScroll
     {
     width: 560px;
-    Overflow: scroll;
+    overflow:scroll;
     }
 </style>
 <table border="1" class="dataframe">
