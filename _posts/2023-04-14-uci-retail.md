@@ -2,7 +2,7 @@
 layout: post
 title: "UCI-Online Retail Dataset"
 author: "Frank Hsiung"
-categories: DS
+categories: [DS, posts]
 tags: [sample]
 image: UCI-cover.png
 ---
