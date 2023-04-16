@@ -11,7 +11,7 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           "Frank's Portfolio"
-description:	       "Tsai Chen is a highly skilled, experienced data scientist with extensive experience in machine learning and strong academic research background. As a Master's student, Tsai Chen has developed proficiency in essential skills for data science such as C++, Python, MySQL, and all kinds of statistical modeling. On top of that, his previous experience as a research assistant makes him equipped with strong research and individual/collaborative academica project implementation, which ended up with publication on one of the top conference about deep learning application.Tsai Chen is a highly skilled, experienced data scientist with extensive experience in machine learning and strong academic research background. As a Master's student, Tsai Chen has developed proficiency in essential skills for data science such as C++, Python, MySQL, and all kinds of statistical modeling. On top of that, his previous experience as a research assistant makes him equipped with strong research and individual/collaborative academica project implementation, which ended up with publication on one of the top conference about deep learning application."
+description:	       "Frank | MSCS @ UTD | Data Scientist @ SparkAmplify | ML researcher"
 author:              "Frank Hsiung"
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
