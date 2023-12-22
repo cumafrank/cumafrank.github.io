@@ -15,9 +15,12 @@ This escalating issue underscores the critical need for robust fraud detection a
 
 In this project, I will dive deep into the world of fintech, exploring a dataset of card, user, and transaction data to detect potential fraudulent activities. Using various data science techniques, we aim to uncover insights that could help in preventing financial fraud.
 
+<br \>
+<br \>
+
 ## Setting Up the Environment
 
-\```python
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -25,9 +28,12 @@ import seaborn as sns
 
 import warnings
 warnings.filterwarnings("ignore")
-\```
+```
 
 In the setup, essential libraries like Pandas, NumPy, Matplotlib, and Seaborn are imported. We also suppress warnings to keep the notebook clean.
+
+<br \>
+<br \>
 
 ## Data Loading
 
@@ -38,6 +44,9 @@ The data consists of detailed information about cards, users, and their transact
 ```
 
 After unzipping, I have access to files: `Card.parquet`, `Transaction.parquet`, and `User.parquet`.
+
+<br \>
+<br \>
 
 ## Data Preprocessing
 
@@ -56,6 +65,8 @@ from geopy.distance import geodesic
 df['Transaction_dis_User'] = df.apply(lambda x: geodesic((x['Tran_Latitude'], x['Tran_Longitude']), (x['User_Latitude'], x['User_Longitude'])).kilometers, axis=1)
 ```
 
+<br \>
+<br \>
 
 ## Exploratory Data Analysis (EDA)
 
@@ -72,11 +83,9 @@ From those correlation matrix, we can also derive that: **1) Higher the salary o
 ![png](/images/DS4A-finance/Card_column_heatmap.png)
 ![png](/images/DS4A-finance/Transaction_column_heatmap.png)
 
-\```python
-# EDA Code - this would include various plots and statistical summaries
-\```
 
-*In-depth EDA insights and visualizations are presented in the notebook.*
+<br \>
+<br \>
 
 ## Feature Engineering
 For such huge and nested dataset, feature engineering is something I would not want to avoid doing given the fact that the large the dataset we have, the more *"noising"* the data are going to be. Here, I apply two methods to counter some of the interfering factors of our dataset: **Robust Scaling, and SMOTE+ENN resampling** <br />
@@ -84,6 +93,9 @@ Compared to standard scaler, robust scaler provides a wider range of values, and
 While for fraud detection projects, bootstrap oversampling might be a popular choice of handling imbalanced data, SMOTE + ENN method breaks the limit of simply copying minority of data and use synthetic data augmentation, which eventually provides model with more information to learn.
 ![png](/images/DS4A-finance/SMOTEENN_demo.png)
 
+
+<br \>
+<br \>
 
 ## Model Building and Evaluation - all data
 
@@ -140,37 +152,43 @@ The performance of SMOTE + ENN dataset generates an unbelivable 100% accuracy, w
 ![png](/images/DS4A-finance/All_data_heatmap_contradiction.png)
 ...Clearly, it's a problem.
 
+<br \>
+<br \>
+
 ## Challenge Wrap-up
 Till this point, we bump into the challenge having too little fraudulent transaction, and using SMOTE + ENN would generate too many augmented information instead of real world fraud transaction. So I decide to narrow down the scope of topic by grouping the dataframe using user, and user+card to see if I can capture the fraud better from the user who owns the card, and card which is used to make fradu transaction.
 
 Here I groupby my data using following aggregation function and rescaling it using Robust Scaler again
 
 ```python
-df_user_card_gb = df.groupby(['User', 'Card']).agg({'Amount': 'mean',
-                                               'Has Chip': 'max',
-                                               'Use Chip': 'mean',
-                                               'Year_to_Retirement': 'mean',
-                                               'Current Age': 'max',
-                                               'FICO Score': 'mean',
-                                               'Year PIN last Changed': 'max',
-                                               'Per Capita Income - Zipcode': 'mean',
-                                               'Yearly Income - Person': 'mean',
-                                               'Total Debt': 'mean',
-                                               'MCC': pd.Series.mode,
-                                               'Credit Limit': 'mean',
-                                               'Prepaid': 'max',
-                                               'Insufficient Balance': 'mean',
-                                               'Cards Issued': 'max',
-                                               'Bad CVV': 'mean',
-                                               'Bad Zipcode': 'mean',
-                                               'Bad PIN': 'mean',
-                                               'Is Fraud?': 'max'
-                                               })
+df_user_card_gb = df.groupby(['User', 'Card']).agg({
+                        'Amount': 'mean',
+                        'Has Chip': 'max',
+                        'Use Chip': 'mean',
+                        'Year_to_Retirement': 'mean',
+                        'Current Age': 'max',
+                        'FICO Score': 'mean',
+                        'Year PIN last Changed': 'max',
+                        'Per Capita Income - Zipcode': 'mean',
+                        'Yearly Income - Person': 'mean',
+                        'Total Debt': 'mean',
+                        'MCC': pd.Series.mode,
+                        'Credit Limit': 'mean',
+                        'Prepaid': 'max',
+                        'Insufficient Balance': 'mean',
+                        'Cards Issued': 'max',
+                        'Bad CVV': 'mean',
+                        'Bad Zipcode': 'mean',
+                        'Bad PIN': 'mean',
+                        'Is Fraud?': 'max'
+                        })
 ```
 I further create a smaller batch of data that downsample matching the number of user+card entity having fraud transaction history with the ones that don't. Here's the visualization of comparison of them:
 ![png](/images/DS4A-finance/User_Card_gb_downsample_comparison.png)
 ![png](/images/DS4A-finance/User_Card_gb_macro_stat_barchart.png)
 
+<br \>
+<br \>
 
 ## Model Building and Evaluation - User+Card groupby data
 
@@ -184,21 +202,23 @@ Apparently our models keep a successful modeling on accuracy and recall compared
 Here we notice the recall rate is still high: **81.2**. While there's still works to be done on the accuracy with unsampled fraud data. There's still a bigger performance raise for us using SMOTE+ENN and re-evaluate on original dataset.
 
 
+<br \>
+<br \>
 
 ## Model Interpretability with 
 #### eli5
 The eli5 results highlight the significance of various features in the predictive model, with **'Use Chip'** being the most influential. The presence of a chip in a card transaction emerges as a strong indicator, possibly reflecting the technology's role in security measures. Meanwhile, **'Year PIN Last Changed'** and **'Bad PIN'** entries suggest that PIN management may be an area of interest in fraud detection efforts.
-\```python
+```python
 import eli5
 
 eli5.show_weights(rf_model, feature_names = list(X_resample_SMOTE.columns))
-\```
+```
 ![png](/images/DS4A-finance/User_Card_gb_rf_moel_eli5.png)
 
 #### SHAP
 The SHAP values chart presents a nuanced picture of feature impact, with **'Use Chip'** and **'Bad PIN'** showing a mixed influence on the model's output, which could indicate varying scenarios of legitimate and fraudulent transactions. The spread of SHAP values for **'Yearly Income - Person'** and **'Per Capita Income - Zipcode'** underscores the complexity of income-related factors in predicting fraudulent behavior, calling for a deeper dive into socioeconomic patterns that may underpin fraud.
 
-\```python
+```python
 import shap
 
 # Create a shap explainer
@@ -210,9 +230,12 @@ shap.force_plot(explainer.expected_value[1], shap_values[1][0], validateX.iloc[0
 shap.summary_plot(shap_values, trainX, feature_names=validateX.columns)
 
 shap.summary_plot(shap_values[1], validateX)
-\```
+```
 ![png](/images/DS4A-finance/User_Card_gb_rf_moel_SHAP.png)
 
+
+<br \>
+<br \>
 
 ## Conclusions and Future Work
 
