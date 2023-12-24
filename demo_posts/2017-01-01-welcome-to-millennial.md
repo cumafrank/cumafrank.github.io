@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: demo_post
 title: "Welcome to Millennial!"
 author: "Paul Le"
 categories: documentation

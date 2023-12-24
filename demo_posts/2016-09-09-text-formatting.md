@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: demo_post
 title: "Text Formatting"
 author: "Paul Le"
 categories: sample

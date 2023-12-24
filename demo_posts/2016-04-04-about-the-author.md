@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: demo_post
 title: "About the Author"
 author: "Paul Le"
 categories: facts

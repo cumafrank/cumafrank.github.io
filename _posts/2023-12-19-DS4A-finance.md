@@ -3,13 +3,13 @@ layout: post
 title: "DS4A - Credit Card Fraud Detection"
 author: "Frank Hsiung"
 categories: post
-tags: [post]
+tags: [Data Science, Finance, EDA, ML, post]
 image: DS4A-finance-cover.jpeg
 ---
 
 # Analyzing Financial Transactions for Fraud Detection
 
-The widespread impact of fraudulent transactions on the US economy is both alarming and profound. In 2023, financial fraud continues to be a significant concern, with estimated 40 billions of dollars lost annually due to these deceptive practices. These losses not only affect individual victims but also destabilize financial institutions and erode consumer trust in the economy. The repercussions extend beyond mere financial loss, leading to increased regulatory scrutiny, higher costs for security measures, and a general sense of vulnerability among consumers and businesses alike.
+The widespread impact of fraudulent transactions on the US economy is both alarming and profound. In 2023, financial fraud remains a significant concern, with an estimated 40 billion dollars lost annually to these deceptive practices. These losses not only affect individual victims but also destabilize financial institutions and erode consumer trust in the economy. The repercussions extend beyond mere financial loss, leading to increased regulatory scrutiny, higher costs for security measures, and a general sense of vulnerability among consumers and businesses alike.
 
 This escalating issue underscores the critical need for robust fraud detection and prevention strategies. Motivated by this urgency, my project focuses on leveraging advanced data science techniques to analyze card, user, and transaction data. The goal is to unearth patterns and insights that could aid in the early detection of fraudulent activities, thereby safeguarding the economy and protecting individuals from financial harm.
 
@@ -54,11 +54,11 @@ After unzipping, I have access to files: `Card.parquet`, `Transaction.parquet`, 
 
 In a lot of data science projects, it's common that we apply some of the following preprocessing approaches to make our data leaner, more machine-friendly, and more informative: **1) Drop null rows** when it's not taking too much of the dataset **2) Merge relational data sheets** **3) Feature mapping**: categorical feature to numerical feature. This project is also not an exception.
 
-#### Zipcode to distance
+#### Zip code to distance
 
-One of the more interesting preprocessing method that I apply is dealing with **zipcode** column. In the page of a research paper [Transaction aggregation as a strategy for credit card fraud detection](http://euro.ecom.cmu.edu/resources/elibrary/epay/s10618-008-0116-z.pdf) from Carneige Mellon College, it says that **The occurrence of two transactions in geographically distant locations at nearly the same time**. I therefore take distance between transaction and card registration into consideration when I am doing the analysis. <br />
+One of the more interesting preprocessing method that I apply is dealing with **zipcode** column. In the page of a research paper [Transaction aggregation as a strategy for credit card fraud detection](http://euro.ecom.cmu.edu/resources/elibrary/epay/s10618-008-0116-z.pdf) from Carnegie Mellon University, it says that **The occurrence of two transactions in geographically distant locations at nearly the same time**. I therefore take distance between transaction and card registration into consideration when I am doing the analysis. <br />
 
-Here, I use [uszipcode](https://uszipcode.readthedocs.io/uszipcode/search.html), and [GeoPy](https://geopy.readthedocs.io/en/stable/) to turn zipcode into latitude/longitude and then use them to calculate the distance of transaction location and card registration location. <br />
+Here, I use [uszipcode](https://uszipcode.readthedocs.io/uszipcode/search.html), and [GeoPy](https://geopy.readthedocs.io/en/stable/) to turn zip code into latitude/longitude and then use them to calculate the distance of transaction location and card registration location. <br />
 
 ```python
 from geopy.distance import geodesic
@@ -70,7 +70,7 @@ df['Transaction_dis_User'] = df.apply(lambda x: geodesic((x['Tran_Latitude'], x[
 
 ## Exploratory Data Analysis (EDA)
 
-With the macro statistics following, we can see there's an obvious imbalance between fraud and non-fraud transaction, which potential cause the difficulty of training a smart machine learning model out of it.
+From the following macro statistics, we observe an obvious imbalance between fraud and non-fraud transaction, which potential cause the difficulty of training a smart machine learning model out of it.
 ![png](/images/DS4A-finance/Macro_statistics.png)
 
 The distribution of amount of transaction is strongly **right-skewed**, which provide us with a hint of either finding a clear outlier pattern or a decision driving factor of the underlying rule of fraud transaction.
@@ -88,7 +88,7 @@ From those correlation matrix, we can also derive that: **1) Higher the salary o
 <br \>
 
 ## Feature Engineering
-For such huge and nested dataset, feature engineering is something I would not want to avoid doing given the fact that the large the dataset we have, the more *"noising"* the data are going to be. Here, I apply two methods to counter some of the interfering factors of our dataset: **Robust Scaling, and SMOTE+ENN resampling** <br />
+Given the size and complexity of this dataset, feature engineering is crucial to reduce *noise* and enhance data quality. Here, I apply two methods to counter some of the interfering factors of our dataset: **Robust Scaling, and SMOTE+ENN resampling** <br />
 Compared to standard scaler, robust scaler provides a wider range of values, and therefore with the presence of outliers, it tends to not produce distorted interpretation of original distribution.
 While for fraud detection projects, bootstrap oversampling might be a popular choice of handling imbalanced data, SMOTE + ENN method breaks the limit of simply copying minority of data and use synthetic data augmentation, which eventually provides model with more information to learn.
 ![png](/images/DS4A-finance/SMOTEENN_demo.png)
@@ -148,7 +148,7 @@ print(f'Test Accuracy: {accuracy}')
 
 ![png](/images/DS4A-finance/All_data_model_performance.png)
 
-The performance of SMOTE + ENN dataset generates an unbelivable 100% accuracy, which tells there's something wrong: Given we expand the fraud data points by almost 2000 times, our model ends up learning the generated pattern instead of our original 500 fraud transaction data.
+The performance of SMOTE + ENN dataset generates an unbelievable 100% accuracy, which tells there's something wrong: Given we expand the fraud data points by almost 2000 times, our model ends up learning the generated pattern instead of our original 500 fraud transaction data.
 ![png](/images/DS4A-finance/All_data_heatmap_contradiction.png)
 ...Clearly, it's a problem.
 
@@ -156,7 +156,7 @@ The performance of SMOTE + ENN dataset generates an unbelivable 100% accuracy, w
 <br \>
 
 ## Challenge Wrap-up
-Till this point, we bump into the challenge having too little fraudulent transaction, and using SMOTE + ENN would generate too many augmented information instead of real world fraud transaction. So I decide to narrow down the scope of topic by grouping the dataframe using user, and user+card to see if I can capture the fraud better from the user who owns the card, and card which is used to make fradu transaction.
+Up to this point, a challenge we've encountered is the scarcity of fraudulent transaction data which therefore cause an issue for our model to learn driving patterns/features for fraudulent transactions. So I decide to narrow down the scope of topic by grouping the dataframe using user, and user+card to see if I can capture the fraud better from the user who owns the card, and card which is used to make fraud transaction.
 
 Here I groupby my data using following aggregation function and rescaling it using Robust Scaler again
 
@@ -172,7 +172,6 @@ df_user_card_gb = df.groupby(['User', 'Card']).agg({
                         'Per Capita Income - Zipcode': 'mean',
                         'Yearly Income - Person': 'mean',
                         'Total Debt': 'mean',
-                        'MCC': pd.Series.mode,
                         'Credit Limit': 'mean',
                         'Prepaid': 'max',
                         'Insufficient Balance': 'mean',
@@ -207,7 +206,7 @@ Here we notice the recall rate is still high: **81.2**. While there's still work
 
 ## Model Interpretability with 
 #### eli5
-The eli5 results highlight the significance of various features in the predictive model, with **'Use Chip'** being the most influential. The presence of a chip in a card transaction emerges as a strong indicator, possibly reflecting the technology's role in security measures. Meanwhile, **'Year PIN Last Changed'** and **'Bad PIN'** entries suggest that PIN management may be an area of interest in fraud detection efforts.
+The eli5 analysis underscores the importance of different features in the predictive model, with **'Use Chip'** being the most influential. The presence of a chip in a card transaction emerges as a strong indicator, possibly reflecting the technology's role in security measures. Meanwhile, **'Year PIN Last Changed'** and **'Bad PIN'** entries suggest that PIN management may be an area of interest in fraud detection efforts.
 ```python
 import eli5
 
@@ -239,5 +238,5 @@ shap.summary_plot(shap_values[1], validateX)
 
 ## Conclusions and Future Work
 
-The project successfully demonstrates the use of data science in detecting fraudulent financial activities. For future work, we plan to explore more advanced models and incorporate real-time detection systems.
+The project successfully demonstrates the use of data science in detecting fraudulent financial activities. In future work, I aim to delve into more sophisticated models and integrate real-time detection systems
 

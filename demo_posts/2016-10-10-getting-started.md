@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: demo_post
 title: "Getting Started"
 author: "Paul Le"
 categories: documentation

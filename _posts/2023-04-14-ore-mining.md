@@ -4,7 +4,7 @@ title: "Ore Mining Analysis"
 subtitle: "Using ore mining data to demo timeseries preprocessing/EDA/modeling"
 author: "Frank Hsiung"
 categories: post
-tags: [Data Science, Timeseries, EDA, ML, post]
+tags: [Data Science, Timeseries, EDA, ML, Energy, post]
 image: Ore-cover.png
 ---
 
