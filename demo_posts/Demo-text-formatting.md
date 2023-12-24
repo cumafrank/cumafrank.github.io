@@ -1,3 +1,4 @@
+<!---
 ---
 layout: demo_post
 title: "Text Formatting"
@@ -6,6 +7,7 @@ categories: sample
 tags: [sample]
 image: arctic-1.jpg
 ---
+-->
 
 # Markdown Support
 

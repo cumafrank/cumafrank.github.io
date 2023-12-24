@@ -1,3 +1,4 @@
+<!---
 ---
 layout: demo_post
 title: "Getting Started"
@@ -6,6 +7,7 @@ categories: documentation
 tags: [documentation,sample]
 image: city-1.jpg
 ---
+-->
 
 # Millennial
 
