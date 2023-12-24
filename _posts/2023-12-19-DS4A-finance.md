@@ -3,7 +3,7 @@ layout: post
 title: "DS4A - Credit Card Fraud Detection"
 author: "Frank Hsiung"
 categories: post
-tags: [Data Science, Finance, EDA, ML, post]
+tags: [data science, finance, eda, ml, post]
 image: DS4A-finance-cover.jpeg
 ---
 
