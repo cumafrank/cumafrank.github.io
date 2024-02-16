@@ -110,9 +110,8 @@ blockquote {
 table {
   border-collapse: collapse;
   margin-bottom: 30px;
-  width: 560px; /*#100%*/
+  width: 100%; /*#100%*/
   overflow-x: auto;
-  /*display: block;*/
 }
 
 table, th, td {
