@@ -99,6 +99,14 @@ df.head()
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -276,6 +284,14 @@ df.describe()
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -486,6 +502,14 @@ df_gb_Country
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -843,6 +867,14 @@ df[df['Country']=='Hong Kong'].groupby('InvoiceDate').mean()
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -1294,6 +1326,14 @@ display(obs_df.head(), com_df.head())
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -1481,6 +1521,14 @@ display(obs_df.head(), com_df.head())
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -1676,6 +1724,14 @@ display(com_df.groupby(['Country'])['InvoiceNo','Quantity','InvoicePrice'].mean(
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -1805,6 +1861,14 @@ display(com_df.groupby(['Country'])['InvoiceNo','Quantity','InvoicePrice'].mean(
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -1946,6 +2010,14 @@ display(a, b)
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2115,6 +2187,14 @@ display(a, b)
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2347,6 +2427,14 @@ a
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2575,6 +2663,14 @@ a
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2919,6 +3015,14 @@ a.sort_values(['Country', 'TotalInvoicePercentage'], ascending=False)
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -3112,6 +3216,14 @@ a.sort_values(['Country', 'TotalInvoicePercentage'], ascending=False)
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -3336,6 +3448,14 @@ a.sort_values(['Country','TotalInvoicePercentage'], ascending=False)
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -3569,6 +3689,14 @@ a.sort_values(['Country','TotalInvoicePercentage'], ascending=False)
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -4051,6 +4179,14 @@ customer_revenue
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -4299,6 +4435,14 @@ grouped[grouped['TimeSinceLastOrder'].notnull()]
     <div class="colab-df-container">
       <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin-bottom: 5px;
+        scrollbar-width: thin;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
