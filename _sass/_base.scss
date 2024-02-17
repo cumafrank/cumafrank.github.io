@@ -46,7 +46,6 @@ body img {
   margin: 5px auto auto auto;
   display: block;
   max-width: 600px;
-  max-width: 100%;
 }
 
 p {
@@ -111,8 +110,7 @@ blockquote {
 table {
   border-collapse: collapse;
   margin-bottom: 30px;
-  max-width: 100%; /*#100%*/
-  overflow-x: auto;
+  width: 100%;
 }
 
 table, th, td {
