@@ -74,14 +74,17 @@ df.head()
 
 <div>
 <style scoped>
+    .dataframe {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
     .dataframe thead th {
         text-align: right;
     }
