@@ -114,6 +114,13 @@ table {
   max-height: 600px;
   display: block;
   overflow-x: auto;
+  
+}
+.scroller {
+  width: 300px;
+  height: 100px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
 }
 
 table, th, td {
