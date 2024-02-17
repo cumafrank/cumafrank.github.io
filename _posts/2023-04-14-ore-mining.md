@@ -80,6 +80,7 @@ df.head()
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
+        scrollbar-width: thin;
     }
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
