@@ -119,8 +119,10 @@ table {
 
 table, th, td {
   border: 1px solid black;
+  scrollbar-width: thin;
 }
 th, td {
   padding: 15px;
   text-align: left;
+  scrollbar-width: thin;
 }
