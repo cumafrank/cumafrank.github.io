@@ -144,7 +144,7 @@ df.head()
 <style scoped>
     .dataframe {
       display: block;
-      width: 100%;
+      max-width: $container-width - 20px;
       overflow-x: auto;
     }
     .dataframe tbody tr th:only-of-type {
@@ -351,7 +351,7 @@ missing_data
 <style scoped>
     .dataframe {
       display: block;
-      width: 100%;
+      max-width: 600px;
       overflow-x: auto;
     }
     .dataframe tbody tr th:only-of-type {
@@ -511,7 +511,7 @@ df.describe()
 <style scoped>
     .dataframe {
       display: block;
-      width: 100%;
+      max-width: 600px;
       overflow-x: auto;
     }
     .dataframe tbody tr th:only-of-type {

@@ -76,7 +76,7 @@ df.head()
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;

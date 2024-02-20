@@ -101,7 +101,7 @@ df.head()
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -286,7 +286,7 @@ df.describe()
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -504,7 +504,7 @@ df_gb_Country
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -869,7 +869,7 @@ df[df['Country']=='Hong Kong'].groupby('InvoiceDate').mean()
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -1328,7 +1328,7 @@ display(obs_df.head(), com_df.head())
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -1523,7 +1523,7 @@ display(obs_df.head(), com_df.head())
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -1726,7 +1726,7 @@ display(com_df.groupby(['Country'])['InvoiceNo','Quantity','InvoicePrice'].mean(
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -1863,7 +1863,7 @@ display(com_df.groupby(['Country'])['InvoiceNo','Quantity','InvoicePrice'].mean(
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -2012,7 +2012,7 @@ display(a, b)
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -2189,7 +2189,7 @@ display(a, b)
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -2429,7 +2429,7 @@ a
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -2665,7 +2665,7 @@ a
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -3017,7 +3017,7 @@ a.sort_values(['Country', 'TotalInvoicePercentage'], ascending=False)
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -3218,7 +3218,7 @@ a.sort_values(['Country', 'TotalInvoicePercentage'], ascending=False)
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -3450,7 +3450,7 @@ a.sort_values(['Country','TotalInvoicePercentage'], ascending=False)
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -3691,7 +3691,7 @@ a.sort_values(['Country','TotalInvoicePercentage'], ascending=False)
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -4181,7 +4181,7 @@ customer_revenue
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
@@ -4437,7 +4437,7 @@ grouped[grouped['TimeSinceLastOrder'].notnull()]
 <style scoped>
     .dataframe {
         display: block;
-        width: 100%;
+        max-width: 600px;
         overflow-x: auto;
         border-collapse: collapse;
         margin-bottom: 5px;
